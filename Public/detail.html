@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Details</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .details-wrapper {
+            max-width: 800px;
+            margin: 32px auto;
+            padding: 16px;
+        }
+
+        .details-card {
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            padding: 20px;
+            background: #fff;
+        }
+
+        .details-flag {
+            width: 180px;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 16px;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px 16px;
+        }
+
+        .details-label {
+            font-weight: 700;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 16px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        @media (max-width: 600px) {
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="details-wrapper">
+        <a class="back-link" href="/index.html">&larr; Back to Countries</a>
+        <section class="details-card">
+            <h1 id="countryName">Country Details</h1>
+            <img id="countryFlag" class="details-flag" alt="Country flag" />
+            <div class="details-grid">
+                <div class="details-label">Capital</div>
+                <div id="capital">N/A</div>
+
+                <div class="details-label">Region</div>
+                <div id="region">N/A</div>
+
+                <div class="details-label">Subregion</div>
+                <div id="subregion">N/A</div>
+
+                <div class="details-label">Population</div>
+                <div id="population">N/A</div>
+
+                <div class="details-label">Currencies</div>
+                <div id="currencies">N/A</div>
+
+                <div class="details-label">Languages</div>
+                <div id="languages">N/A</div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+
+        const name = params.get("name") || "N/A";
+        const capital = params.get("capital") || "N/A";
+        const region = params.get("region") || "N/A";
+        const subregion = params.get("subregion") || "N/A";
+        const populationValue = Number(params.get("population") || 0);
+        const flag = params.get("flag") || "";
+        const currencies = params.get("currencies") || "N/A";
+        const languages = params.get("languages") || "N/A";
+
+        document.getElementById("countryName").textContent = name;
+        document.getElementById("capital").textContent = capital;
+        document.getElementById("region").textContent = region;
+        document.getElementById("subregion").textContent = subregion;
+        document.getElementById("population").textContent = populationValue
+            ? populationValue.toLocaleString()
+            : "N/A";
+        document.getElementById("currencies").textContent = currencies;
+        document.getElementById("languages").textContent = languages;
+
+        const flagEl = document.getElementById("countryFlag");
+        if (flag) {
+            flagEl.src = flag;
+            flagEl.alt = `${name} flag`;
+        } else {
+            flagEl.style.display = "none";
+        }
+    </script>
+</body>
+</html>

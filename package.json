@@ -1,0 +1,22 @@
+{
+    "name":  "country_explorer_rest_api",
+    "version":  "1.0.0",
+    "description":  "Country Explorer Node.js Application",
+    "main":  "server.js",
+    "scripts":  {
+                    "test":  "echo \"Error: no test specified\" \u0026\u0026 exit 1",
+                    "start":  "nodemon server.js -e ejs,js,css,html,jpg,png,scss"
+                },
+    "keywords":  [
+
+                 ],
+    "author":  "",
+    "license":  "ISC",
+    "type":  "commonjs",
+    "dependencies":  {
+                         "bootstrap":  "^5.3.3",
+                         "express":  "^5.2.1",
+                         "jquery":  "^4.0.0",
+                         "node-fetch":  "^3.3.2"
+                     }
+}

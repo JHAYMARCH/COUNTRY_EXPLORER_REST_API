@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Explorer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Country Explorer</h1>
+    </header>
+
+    <!-- Controls: Search + Filter -->
+    <div class="controls">
+        <input type="text" id="searchInput" placeholder="Search countries..." aria-label="Search countries">
+
+        <label for="regionFilter" class="sr-only">Filter by Region</label>
+        <select id="regionFilter">
+            <option value="">All Regions</option>
+            <option value="Africa">Africa</option>
+            <option value="Americas">Americas</option>
+            <option value="Asia">Asia</option>
+            <option value="Europe">Europe</option>
+            <option value="Oceania">Oceania</option>
+            <option value="Antarctic">Antarctic</option>
+        </select>
+
+        <input
+            type="text"
+            id="populationInput"
+            placeholder="Population (e.g. >1000000 or 1000000-5000000)"
+            aria-label="Search by population"
+        >
+    </div>
+
+    <!-- Statistics -->
+    <div id="stats">
+        Total countries: <span id="totalCountries">0</span> |
+        Displaying: <span id="displayedCountries">0</span>
+    </div>
+
+    <!-- Country Cards Container -->
+    <div id="country-cards-container">
+        <!-- Cards injected by script.js -->
+    </div>
+
+    <!-- No Results Message -->
+    <div id="noResults">No countries found.</div>
+
+    <!-- Pagination Buttons -->
+    <div class="pagination-buttons">
+        <button id="backBtn">Back</button>
+        <button id="showMoreBtn">Show More</button>
+    </div>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>

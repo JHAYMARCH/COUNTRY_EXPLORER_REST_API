@@ -1,0 +1,180 @@
+/* Reset & base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #0077cc;
+    color: #fff;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 2rem;
+}
+
+/* Controls (Search + Filter) */
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.controls input,
+.controls select {
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.controls input:focus,
+.controls select:focus {
+    border-color: #0077cc;
+}
+
+/* Statistics */
+#stats {
+    max-width: 1200px;
+    margin: 0 auto 1rem auto;
+    padding: 0 1rem;
+    font-size: 1rem;
+}
+
+/* Country Cards Grid */
+#country-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.2rem;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Country Card */
+.country-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.country-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+/* Flag */
+.flag-container {
+    width: 100%;
+    height: 140px;
+    overflow: hidden;
+}
+
+.flag-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.flag-placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 140px;
+    font-size: 3rem;
+}
+
+/* Card Content */
+.country-card-content {
+    padding: 0.8rem 1rem 1rem 1rem;
+    flex-grow: 1;
+}
+
+.country-card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #0077cc;
+}
+
+.country-info {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.25rem 0;
+}
+
+.info-label {
+    font-weight: 600;
+    color: #555;
+}
+
+.info-value {
+    text-align: right;
+    color: #333;
+}
+
+/* Pagination Buttons */
+.pagination-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+}
+
+button {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    background-color: #0077cc;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #005fa3;
+}
+
+/* No Results */
+#noResults {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+    padding: 2rem 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .controls input,
+    .controls select {
+        width: 100%;
+    }
+}
